@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bakewell by Crumbzy</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fef6f3;
+      color: #5b3e36;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* BACKGROUND DOODLE */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("doodle.png") repeat;
+      opacity: 0.05;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #f3dfda;
+    }
+
+    header img {
+      width: 180px;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about {
+      text-align: center;
+    }
+
+    /* MENU SECTION */
+    .menu {
+      background-color: #fff7f2;
+      border-top: 2px solid #e8c5ba;
+      border-bottom: 2px solid #e8c5ba;
+      padding: 3rem 1rem;
+    }
+
+    .menu-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .menu-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .menu-text {
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .menu-text h3 {
+      font-family: 'Playfair Display', serif;
+      color: #d7a1a1;
+      margin-bottom: 0.4rem;
+    }
+
+    .menu-note {
+      text-align: center;
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact-icons {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+      background-color: #f3dfda;
+    }
+
+    a {
+      color: #5b3e36;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* WHATSAPP FLOATING BUTTON – BRAND COLOURS */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #d7a1a1; /* brand blush */
+      color: #ffffff;
+      border-radius: 50px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+      z-index: 1000;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #c78f8f;
+      transform: scale(1.05);
+    }
+
+    .whatsapp-float i {
+      font-size: 20px;
+    }
+
+    /* Hide / show animation */
+    .whatsapp-float.hide {
+      transform: translateY(100px);
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="Bakewell Logo" />
+  <h1>Bakewell by Crumbzy</h1>
+  <p>Soulsome Desserts. Crafted with Care.</p>
+</header>
+
+<section class="section about">
+  <h2>About Us</h2>
+  <p>
+    Bakewell by Crumbzy is a small-batch home bakery rooted in comfort and care.
+    Every dessert is thoughtfully crafted using quality ingredients and a
+    patient, hands-on process that values flavour as much as feeling.
+    Made fresh on preorder, Bakewell’s offerings are meant to be savoured slowly —
+    familiar, honest, and quietly indulgent.
+  </p>
+</section>
+
+<section class="menu">
+  <div class="menu-inner">
+    <h2 style="text-align:center;">Menu</h2>
+
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="cookies.jpg" alt="Chocochunk Cookies">
+        <div class="menu-text">
+          <h3>Cookies</h3>
+          <p>Chocochunk</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="cheesecake.jpg" alt="Cheesecakes">
+        <div class="menu-text">
+          <h3>Cheesecakes</h3>
+          <p>Vanilla · Chocolate</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="cupcakes.jpg" alt="Cupcakes">
+        <div class="menu-text">
+          <h3>Cupcakes</h3>
+          <p>Vanilla · Mocha · Masala Chai</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="cakes.jpg" alt="Cakes">
+        <div class="menu-text">
+          <h3>Cakes</h3>
+          <p>Banana Chocolate · Marble · Pineapple</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="brownies.jpg" alt="Biscoff Brownies">
+        <div class="menu-text">
+          <h3>Brownies</h3>
+          <p>Biscoff</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="menu-note">All items are available on preorder only.</p>
+  </div>
+</section>
+
+<section class="section contact">
+  <h2>Get in Touch</h2>
+  <div class="contact-icons">
+    <div><i class="fab fa-instagram"></i> <a href="https://instagram.com/bakewellbycrumbzy" target="_blank">@bakewellbycrumbzy</a></div>
+    <div><i class="fab fa-whatsapp"></i> <a href="https://wa.me/916395847048" target="_blank">+91-6395-847048</a></div>
+    <div><i class="fas fa-envelope"></i> <a href="mailto:contact.bakewellbycrumbzy@gmail.com">contact.bakewellbycrumbzy@gmail.com</a></div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Bakewell by Crumbzy · Aligarh, India
+</footer>
+
+<a href="https://wa.me/916395847048?text=Hi%20Bakewell%20by%20Crumbzy,%20I’d%20like%20to%20place%20an%20order"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Order on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  Order on WhatsApp
+</a>
+
+<script>
+  let lastScrollY = window.scrollY;
+  const whatsappButton = document.querySelector('.whatsapp-float');
+
+  if (whatsappButton) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        whatsappButton.classList.add('hide');
+      } else {
+        whatsappButton.classList.remove('hide');
+      }
+      lastScrollY = window.scrollY;
+    });
+  }
+</script>
+
+</body>
+</html>
